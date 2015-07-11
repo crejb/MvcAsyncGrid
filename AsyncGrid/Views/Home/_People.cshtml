@@ -1,0 +1,28 @@
+﻿@using AsyncGrid.Helpers;
+@model IEnumerable<AsyncGrid.Models.Person>
+
+
+
+<div id="personTableHost" class="async-table-host">
+    <table class="table">
+        <tr>
+            <th>@Html.TableHeaderLink("Index", "First Name", "FirstName")</th>
+            <th>@Html.TableHeaderLink("Index", "Last Name", "LastName")</th>
+            <th>@Html.TableHeaderLink("Index", "Age")</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td class="text-primary">
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td class="text-primary">
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+            </tr>
+        }
+    </table>
+</div>
