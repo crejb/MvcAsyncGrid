@@ -12,7 +12,7 @@ namespace AsyncGrid.Helpers
         public static IHtmlString TableHeaderLink(this HtmlHelper helper, string target, string caption, string name = null)
         {
             name = name ?? caption;
-            return helper.ActionLink(caption, target, new { SortBy = name, SortAsc = helper.ViewBag.SortDirections[name] });
+            return helper.ActionLink(caption, target, new { SortBy = name, SortAsc = helper.ViewBag.SortDirections[name] }, new { @class = "async-table-link" });
         }
     }
 }
